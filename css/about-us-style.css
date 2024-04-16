@@ -1,0 +1,52 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 999;
+}
+main {
+    margin-top: 100px; /* Выставите значение равное высоте вашего header */
+    padding: 20px;
+}
+.bg-dark {
+    background-image: url("../pictures/head-pic.png");
+    box-shadow: 0 0 50px black;
+}
+.dropdown-toggle {
+    background-color: #FE2400;
+    border: #FE2400;
+}
+.dropdown-toggle:hover {
+    background-color: #FE2400;
+    border: #FE2400;
+}
+.dropdown-toggle:active {
+    background-color: #FE2400;
+    border: #FE2400;
+}
+.text-dark {
+    color: black;
+    font-weight: bold;
+}
+.logo-text {
+    text-align: center;
+    margin-bottom: -10px;
+}
+.nav-item {
+    margin-left: 50px;
+}
+.footer-icon{
+    color:black;
+}
+.section-header{
+    text-align:center;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 100px;
+}
+.m {
+    margin-bottom: 50px;
+}

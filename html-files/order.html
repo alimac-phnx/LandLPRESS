@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/order-style.css">
+
+    <script src="https://kit.fontawesome.com/7b9fdfb84a.js" crossorigin="anonymous"></script>
+    <title>Order</title>
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><div><p class="logo-text text-dark">L&L</p><p class="logo-text text-dark">PRESS</p></div></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../html-files/index.html">MAIN</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle nav-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            WORKS
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="../html-files/works.html">Business cards</a></li>
+                            <li><a class="dropdown-item" href="../html-files/works.html">Brochures</a></li>
+                            <li><a class="dropdown-item" href="../html-files/works.html">Photo albums</a></li>
+                            <li><a class="dropdown-item" href="../html-files/works.html">Post cards</a></li>
+                            <li><a class="dropdown-item" href="../html-files/works.html">Posters</a></li>
+                            <li><a class="dropdown-item" href="../html-files/works.html">Books</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">ORDER <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../html-files/about-us.html">ABOUT US</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+<main>
+    <form class="order-form">
+        <fieldset class="col-12 col-sm-12">
+            <legend class="text-dark">Order registration</legend>
+            <div class="mb-3 input">
+                <label for="disabledTextInputName" class="form-label text-dark">Enter your name</label>
+                <input type="text" id="disabledTextInputName" class="form-control" placeholder="Your name">
+            </div>
+            <div class="mb-3 input">
+                <label for="disabledTextInputAddress" class="form-label text-dark">Enter your address</label>
+                <input type="text" id="disabledTextInputAddress" class="form-control first-in" placeholder="Your address">
+                <input type="text" id="disabledTextInputPostCode" class="form-control" placeholder="Your post code">
+            </div>
+            <div class="mb-3">
+                <label for="disabledSelect" class="form-label text-dark">Select the type of service</label>
+                <select id="disabledSelect" class="form-select">
+                    <option>...</option>
+                    <option>-  Business card  -</option>
+                    <option>-  Brochure  -</option>
+                    <option>-  Photo album  -</option>
+                    <option>-  Post card  -</option>
+                    <option>-  Poster  -</option>
+                    <option>-  Book  -</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input checkbox" type="checkbox" id="disabledFieldsetCheck" onchange="showContent('phone-input')">
+                    <label class="form-check-label" for="disabledFieldsetCheck">
+                        I don't mind a phone call
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3 input" id="phone-input">
+                <label for="disabledTextInputPhone" class="form-label text-dark">Enter your phone number</label>
+                <input type="text" id="disabledTextInputPhone" class="form-control" placeholder="Your phone">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="openModal()">Confirm</button>
+        </fieldset>
+    </form>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Your order has been placed!</p>
+            <p></p>
+            <p>Tnanks!</p>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    function openModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+
+        // Очистить значения полей формы
+        document.getElementById('disabledTextInputName').value = '';
+        document.getElementById('disabledTextInputAddress').value = '';
+        document.getElementById('disabledTextInputPostCode').value = '';
+        document.getElementById('disabledSelect').selectedIndex = 0; // Установить первый вариант выбранного элемента
+        document.getElementById('disabledFieldsetCheck').checked = false;
+        document.getElementById('disabledTextInputPhone').value = '';
+    }
+
+</script>
+
+<script>
+    function showContent(section) {
+        var inputContainer = document.getElementById(section);
+        var showInputCheckbox = document.getElementById('disabledFieldsetCheck');
+
+        if (showInputCheckbox.checked) {
+            inputContainer.style.display = 'block'; // Показываем поле ввода
+        } else {
+            inputContainer.style.display = 'none'; // Скрываем поле ввода
+        }
+    }
+
+</script>
+
+
+
+<!-- Footer -->
+
+
+<footer>
+    <section class="footer">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+                <div class="col mb-3">
+                    <p class="text-muted">© 2023</p>
+                </div>
+
+                <div class="col mb-3">
+
+                </div>
+
+                <div class="col mb-3">
+                    <h5 class="text-center">Info</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 text-muted">Glasgow, 40 Tipografskaya</li>
+                        <li class="nav-item mb-2 text-muted">Mon-Sun: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3">
+                    <h5>Contact Numbers</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 text-muted">+375-29-241-0813</li>
+                        <li class="nav-item mb-2 text-muted">+375-33-331-7268</li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3 text-center">
+                    <h5>Social Media</h5>
+                    <ul class="nav flex-column">
+                        <a href="#" class="footer-icon text-muted"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-icon text-muted"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-icon text-muted"><i class="fab fa-instagram"></i></a>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </section>
+</footer>
+
+<!-- Bootstrap JS и зависимости -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
